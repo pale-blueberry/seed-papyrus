@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101b18" />
+  <title>Papyrus</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header><span class="brand">✳ Papyrus</span><span class="version">0.1</span></header>
+    <section class="canvas" aria-label="Growing illustration">
+      <svg id="scene" viewBox="0 0 320 300" role="img" aria-label="A tree that grows as you write">
+        <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#243b38"/><stop offset="1" stop-color="#111f1c"/></linearGradient></defs>
+        <rect width="320" height="300" fill="url(#sky)" />
+        <circle cx="255" cy="65" r="23" fill="#e0cf9c" opacity=".35" />
+        <path d="M0 280 Q90 258 170 277 T320 270 V300 H0Z" fill="#243e32" />
+        <g id="tree" opacity="0">
+          <path d="M160 277 Q156 215 159 150 M159 215 Q123 166 95 134 M159 195 Q195 155 226 116 M159 169 Q151 118 162 78" stroke="#aa805c" stroke-width="10" stroke-linecap="round" fill="none"/>
+          <g fill="#659b72"><circle cx="92" cy="125" r="39"/><circle cx="131" cy="95" r="44"/><circle cx="173" cy="83" r="48"/><circle cx="221" cy="112" r="43"/><circle cx="194" cy="149" r="37"/><circle cx="118" cy="151" r="36"/></g>
+          <g fill="#a6bf8b" opacity=".65"><circle cx="101" cy="109" r="12"/><circle cx="166" cy="66" r="16"/><circle cx="230" cy="103" r="12"/></g>
+        </g>
+      </svg>
+      <div class="progress" id="progress">Every word leaves a trace.</div>
+    </section>
+    <label for="writing">Your words</label>
+    <div class="writing-wrap" id="writingWrap"><textarea id="writing" spellcheck="true" placeholder="Begin writing…" aria-label="Your private writing"></textarea></div>
+    <div class="controls"><button id="toggle" type="button">Reveal words</button><button id="export" type="button">Export .md</button><button id="clear" type="button">Clear</button></div>
+    <p class="note">Saved in this browser on this device. Not encrypted. Avoid sensitive writing until stronger protection is added.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
